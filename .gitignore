@@ -1,0 +1,30 @@
+# Ignore build outputs
+target/
+build/
+out/
+
+# Ignore logs
+*.log
+
+# Ignore temporary files
+*.tmp
+*.swp
+*.bak
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/project settings
+.vscode/
+.idea/
+*.iml
+
+# Ignore dependency caches
+node_modules/
+.env
+
+# Ignore Jenkins-specific files
+# (if you generate workspace or job configs locally)
+.jenkins/
+workspace/

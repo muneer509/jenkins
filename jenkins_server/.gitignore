@@ -1,0 +1,44 @@
+
+# Terraform state & crash logs (sensitive)
+terraform.tfstate
+terraform.tfstate.*
+*.tfstate
+*.tfstate.backup
+crash.log
+crash.*.log
+
+
+# Sensitive/local config
+*.pem
+*.key
+*.tfvars
+*.tfvars.json
+
+# Recommended to COMMIT this lock file for consistent provider versions:
+# (Remove this line to commit it)
+#.terraform.lock.hcl
+
+# OS/editor
+.DS_Store
+Thumbs.db
+``
+# IDE files
+.vscode/    
+.idea/
+*.iml
+*.log
+*.swp
+*.swo
+*.bak
+*.tmp
+# Kubernetes config files
+*.kubeconfig
+*.kubecontext
+.kube/
+.kubectl/
+# Helm files
+
+*.tgz
+charts/
+helmfile.d/
+# Kubernetes manifests
