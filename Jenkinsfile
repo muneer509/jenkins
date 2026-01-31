@@ -5,6 +5,8 @@ pipeline {
     options {
         timeout(time:10, unit: 'SECONDS')
         buildDiscarder(logRotator(numToKeepStr: '3'))
+        disableConcurrentBuilds() 
+        retry(2)
 
     }
 
@@ -18,6 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
+                error 'Fialed'
             }
         }
         stage('Deploy') {
