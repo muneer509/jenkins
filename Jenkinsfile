@@ -43,6 +43,10 @@ pipeline {
     agent {
         label 'AGENT-1'
     }
+    triggers {
+        cron('H/1 * * * *')   // Run every minute
+    }
+
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '3'))
