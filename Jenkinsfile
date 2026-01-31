@@ -4,9 +4,11 @@ pipeline {
     }
     options {
     
-        buildDiscarder(logRotator(numToKeepStr: '3'))
-        disableConcurrentBuilds() 
-        retry(1)
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Muneer', description: 'Your name')
+        string(name: 'AGE', defaultValue: '33', description: 'Your age')
+        booleanParam(name: 'SEX', defaultValue: true, description: 'Male?')
+
 
 
     }
