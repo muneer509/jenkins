@@ -3,11 +3,17 @@ pipeline {
         label 'AGENT-1'
     }
     options {
-        timeout(time:10, unit: 'SECONDS')
+    
         buildDiscarder(logRotator(numToKeepStr: '3'))
         disableConcurrentBuilds() 
-        retry(4)
+        retry(1)
 
+
+    }
+    parameters{
+        string(name: 'PERSON')
+        text(name: 'AGE')
+        booleanParam(name: 'sex' )
     }
 
     stages {
@@ -17,17 +23,14 @@ pipeline {
                 sleep 2
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing...'
-                error 'Fialed'
-            }
+        stage('Printing Parameters')
+        steps {
+            echo 'Hello ${param.PERSON}'
+            echo 'Age is: ${param.AGE}'
+            echo 'Sex is: ${param.sex}'
+
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying...'
-            }
-        }
+      
     }
     post {
         always{
