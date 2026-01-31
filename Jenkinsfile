@@ -3,7 +3,7 @@ pipeline {
         label 'AGENT-1'
     }
     options {
-        timeout(time:10, unit: 'SECOUNDS')
+        timeout(time:10, unit: 'SECONDS')
 
     }
 
