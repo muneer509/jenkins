@@ -54,11 +54,11 @@ pipeline {
         retry(1)
     }
 
-    parameters {
-        string(name: 'PERSON', defaultValue: 'John Doe', description: 'Your name')
-        string(name: 'AGE', defaultValue: '25', description: 'Your age')
-        booleanParam(name: 'SEX', defaultValue: true, description: 'Male?')
-    }
+    // parameters {
+    //     string(name: 'PERSON', defaultValue: 'John Doe', description: 'Your name')
+    //     string(name: 'AGE', defaultValue: '25', description: 'Your age')
+    //     booleanParam(name: 'SEX', defaultValue: true, description: 'Male?')
+    // }
 
     stages {
         stage('Approval') {
@@ -76,13 +76,13 @@ pipeline {
             }
         }
 
-        stage('Printing Parameters') {
-            steps {
-                echo "Hello ${params.PERSON}"
-                echo "Age is: ${params.AGE}"
-                echo "Sex is: ${params.SEX}"
-            }
-        }
+        // stage('Printing Parameters') {
+        //     steps {
+        //         echo "Hello ${params.PERSON}"
+        //         echo "Age is: ${params.AGE}"
+        //         echo "Sex is: ${params.SEX}"
+        //     }
+        // }
     }
 
     post {
