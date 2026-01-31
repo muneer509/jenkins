@@ -3,6 +3,8 @@ pipeline {
         label 'AGENT-1'
     }
     options {
+        buildDiscarder(logRotator(numToKeepStr: '2'))
+    }
     
     parameters {
         string(name: 'PERSON', defaultValue: 'Muneer', description: 'Your name')
@@ -22,7 +24,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sleep 2
+                sleep 10
             }
         }
         stage('Printing Parameters')
@@ -39,5 +41,4 @@ pipeline {
             deleteDir()
         }
     }
-}
 }
