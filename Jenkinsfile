@@ -4,6 +4,7 @@ pipeline {
     }
     options {
         timeout(time:10, unit: 'SECONDS')
+        buildDiscarder(logRotator(numToKeepStr: '3'))
 
     }
 
