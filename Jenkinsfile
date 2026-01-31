@@ -14,11 +14,6 @@ pipeline {
 
 
     }
-    parameters{
-        string(name: 'PERSON')
-        text(name: 'AGE')
-        booleanParam(name: 'sex' )
-    }
 
     stages {
         stage('Build') {
