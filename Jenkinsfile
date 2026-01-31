@@ -27,6 +27,7 @@ pipeline {
                 sleep 10
             }
         }
+    
         stage('Printing Parameters')
         steps {
             echo 'Hello ${param.PERSON}'
