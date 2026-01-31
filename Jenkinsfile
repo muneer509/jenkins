@@ -61,6 +61,14 @@ pipeline {
     }
 
     stages {
+        stage('Approval') {
+            input {
+                message 'Should we continue?'
+                ok 'yes, we should.'
+                submitter 'Muneer'
+               
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..........'
